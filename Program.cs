@@ -4,23 +4,33 @@ namespace GameProblem
 {
     class Program
     {
-        int cash = 100;
-        int bet = 1;
-
+       
         static void Main(string[] args)
         {
+            int cash = 100;
+            int bet = 1;
 
-            Random random = new Random();
-            int check = random.Next(0, 2);
-            if (check == bet)
+            int winPercent = 150;
+            int lossPercent = 50;
+
+            while (cash <= winPercent && cash >= lossPercent)
             {
-                Console.WriteLine("win")
+                Random random = new Random();
+                int check = random.Next(0, 2);
+                if (check == bet)
+                {
+                    Console.WriteLine("win");
+                    cash++;
+                }
+                else
+                {
+                    Console.WriteLine("loose");
+                        cash--;
+                }
+
+                Console.WriteLine("cash is: " + cash);
             }
-            else
-            {
-                Console.WriteLine("loose")
-            }
-            Console.WriteLine("welcome to game Problem");
+            
         }
     }
 }
