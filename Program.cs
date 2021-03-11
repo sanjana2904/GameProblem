@@ -12,9 +12,9 @@ namespace GameProblem
 
             int winPercent = 150;
             int lossPercent = 50;
+            for (int day = 0; day <= 20; day++)
+            { 
 
-            while (cash <= winPercent && cash >= lossPercent)
-            {
                 Random random = new Random();
                 int check = random.Next(0, 2);
                 if (check == bet)
@@ -28,7 +28,8 @@ namespace GameProblem
                         cash--;
                 }
 
-                Console.WriteLine("cash is: " + cash);
+               Console.WriteLine("day is: " + day);
+                
             }
             
         }
